@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Real-Time Leaderboard — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the **frontend application** for a Real-Time Leaderboard system.  
+The frontend and backend are developed as separate projects to reflect modern production architecture practices.  
+This application is being actively developed.
 
-Currently, two official plugins are available:
+The frontend is built using React, TypeScript, and Vite. It will integrate with a secure backend service implemented in Spring Boot, PostgreSQL, and JWT authentication (maintained in a separate repository).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Objectives
+- Build a scalable and maintainable frontend architecture
+- Implement a clean UI for displaying real-time leaderboard data
+- Integrate securely with a RESTful backend API
+- Follow industry-standard project structure and development practices
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
+- React
+- TypeScript
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Backend Integration (Planned):
+- REST API
+- JWT-based authentication
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Current Development Progress
+- Initial project setup completed
+- Frontend architecture and directory structure created
+- Initial pages and components under development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Planned Features
+- Leaderboard interface
+- Live player ranking display
+- API integration with backend services
+- Authentication and user session handling
+- Player statistics view
+- Optional administrative functionality
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Project Structure
+realtime-leaderboard-frontend/
+│
+├── public/                Static assets
+│
+├── src/
+│   ├── api/               Backend API calls
+│   ├── assets/            Images and icons
+│   ├── components/        Reusable UI components
+│   ├── config/            App configuration
+│   ├── contexts/          Global state (Auth, etc.)
+│   ├── hooks/             Custom React hooks
+│   ├── pages/             Application pages / routes
+│   ├── services/          Auth & storage handling
+│   ├── types/             TypeScript type definitions
+│   ├── utils/             Helper / utility functions
+│   ├── styles/            Global styling
+│   ├── App.tsx            Root component
+│   └── main.tsx           Application entry
+│
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+
